@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Галочка — кофейня, которая помнит твой заказ</title>
+<meta name="description" content="Кофейня «Галочка» — авторские напитки, свежая выпечка, доставка за 30 минут и подписка на кофе.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+  <div class="preloader__inner">
+    <div class="preloader__cup">☕</div>
+    <div class="preloader__text">Галочка</div>
+    <div class="preloader__bar"><span id="preloadBar"></span></div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="logo" data-page="home">
+      <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="var(--accent)" stroke-width="3"/>
+        <path d="M11 21 L17 27 L29 13" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo__text">Галочка</span>
+    </a>
+    <nav class="nav" id="nav">
+      <button class="nav__link active" data-page="home">Главная</button>
+      <button class="nav__link" data-page="about">О нас</button>
+      <button class="nav__link" data-page="menu">Меню</button>
+      <button class="nav__link" data-page="gallery">Галерея</button>
+      <button class="nav__link" data-page="booking">Бронь</button>
+      <button class="nav__link" data-page="contacts">Контакты</button>
+    </nav>
+    <div class="header__actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Сменить тему">🌙</button>
+      <button class="cart-btn" id="cartBtn">🛒 <span class="cart-btn__count" id="cartCount">0</span></button>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+</header>
+
+<main class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1920&q=80" alt="Атмосфера кофейни">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container hero__inner">
+      <p class="hero__badge">✦ Кофейня в центре города · с 2018 года</p>
+      <h1 class="hero__title">
+        <span class="hero__line">Кофе, который</span>
+        <span class="hero__line hero__line--accent">ставит галочку</span>
+        <span class="hero__line">в сердце.</span>
+      </h1>
+      <p class="hero__subtitle">Зерна свежей обжарки, авторские напитки и выпечка из собственной пекарни. Закажи онлайн — забери без очереди или получи доставку за 30 минут.</p>
+      <div class="hero__buttons">
+        <button class="btn btn--solid" data-page="menu">Смотреть меню</button>
+        <button class="btn btn--ghost" data-page="booking">Забронировать столик</button>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><b data-count="1200">0</b><span>чашек в день</span></div>
+        <div class="stat"><b data-count="24">0</b><span>позиций в меню</span></div>
+        <div class="stat"><b data-count="98">0</b><span>% довольных гостей</span></div>
+        <div class="stat"><b data-count="8">0</b><span>лет с вами</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЕГУЩАЯ СТРОКА -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>☕ Свежая обжарка каждую неделю</span><span>🚚 Доставка за 30 минут</span><span>🎁 Каждый 7-й кофе — бесплатно</span><span>🥐 Десерты из своей пекарни</span><span>🌱 100% арабика</span><span>☕ Свежая обжарка каждую неделю</span><span>🚚 Доставка за 30 минут</span><span>🎁 Каждый 7-й кофе — бесплатно</span><span>🥐 Десерты из своей пекарни</span><span>🌱 100% арабика</span>
+    </div>
+  </div>
+
+  <!-- ПРЕИМУЩЕСТВА -->
+  <section class="section">
+    <div class="container">
+      <div class="cards__grid features__grid">
+        <div class="feature-card reveal"><span>🚚</span><h3>Доставка 30 минут</h3><p>По центру города привозим горячим. От 800 ₽ — бесплатно.</p></div>
+        <div class="feature-card reveal"><span>🔥</span><h3>Свежая обжарка</h3><p>Зерно не старше 7 дней. Обжариваем сами, каждую неделю.</p></div>
+        <div class="feature-card reveal"><span>⭐</span><h3>7-й кофе бесплатно</h3><p>Цифровая карта лояльности — просто назови номер телефона.</p></div>
+        <div class="feature-card reveal"><span>📱</span><h3>Заказ без очереди</h3><p>Заказывай онлайн — напиток будет готов к твоему приходу.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О НАС (превью) -->
+  <section class="section">
+    <div class="container about__grid">
+      <div class="about__visual reveal">
+        <img class="about__img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Интерьер кофейни" onerror="imgFail(this)">
+        <img class="about__img about__img--sm" src="https://images.unsplash.com/photo-1521017432531-fbd199d84bca?w=500&q=80" alt="Бариста за работой" onerror="imgFail(this)">
+      </div>
+      <div class="about__content">
+        <p class="section-tag">О нас</p>
+        <h2 class="section-title reveal">Маленькая кофейня с большим характером</h2>
+        <p class="reveal">«Галочка» началась с маленькой эспрессо-машины и веры в то, что хороший кофе должен быть доступен каждому. Сегодня мы обжариваем зерно сами и печём десерты в собственной кухне.</p>
+        <button class="btn btn--ghost reveal" data-page="about">Подробнее о нас →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОПУЛЯРНОЕ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Хиты, которые покупают чаще всего</p>
+        <h2 class="section-title reveal">Популярное меню</h2>
+      </div>
+      <div class="menu__grid" id="popularGrid"></div>
+      <div class="center"><button class="btn btn--solid" data-page="menu">Смотреть всё меню →</button></div>
+    </div>
+  </section>
+
+  <!-- ПОДПИСКА НА КОФЕ -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-block reveal">
+        <div class="cta-block__info">
+          <p class="section-tag">Подписка «Галочка+»</p>
+          <h2 class="section-title">Кофе каждый день — за половину цены</h2>
+          <p>Один кофе в день в течение месяца. Любой напиток из кофейной категории, включая раф «Галочка». Экономия до 4 200 ₽.</p>
+          <ul class="cta-block__list">
+            <li>✓ 30 напитков в месяц</li>
+            <li>✓ Приоритетная выдача без очереди</li>
+            <li>✓ Бесплатная замена на растительное молоко</li>
+          </ul>
+        </div>
+        <div class="cta-block__card">
+          <span class="cta-block__old">6 900 ₽</span>
+          <span class="cta-block__price">3 490 ₽/мес</span>
+          <button class="btn btn--solid btn--wide" data-subscribe>Оформить подписку</button>
+          <small>Отмена в любой момент · 12 дней гарантии возврата</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Отзывы</p>
+        <h2 class="section-title reveal">Что говорят гости</h2>
+      </div>
+      <div class="reviews-wrap">
+        <div class="reviews__slider"><div class="reviews__track" id="reviewsTrack"></div></div>
+        <div class="reviews__nav">
+          <button id="revPrev" class="rev-arrow">←</button>
+          <div class="reviews__dots" id="revDots"></div>
+          <button id="revNext" class="rev-arrow">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ГАЛЕРЕЯ (превью) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Атмосфера</p>
+        <h2 class="section-title reveal">Загляните до визита</h2>
+      </div>
+      <div class="gallery__grid gallery__grid--preview" id="homeGallery"></div>
+      <div class="center"><button class="btn btn--ghost" data-page="gallery">Вся галерея →</button></div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛЬНЫЙ CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-final reveal">
+        <h2>Твой идеальный кофе уже ждёт ☕</h2>
+        <p>Закажи сейчас — и забери без очереди. Или привезём за 30 минут.</p>
+        <button class="btn btn--solid btn--big" data-page="menu">Заказать кофе</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= О НАС ================= -->
+<main class="page" id="page-about">
+  <section class="page-hero container">
+    <h1 class="section-title">О кофейне «Галочка»</h1>
+    <p class="section-sub">История, ценности и люди за кофейной стойкой.</p>
+  </section>
+  <section class="section pt-0">
+    <div class="container about__grid">
+      <div class="about__visual reveal">
+        <img class="about__img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Интерьер" onerror="imgFail(this)">
+        <img class="about__img about__img--sm" src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80" alt="Гости" onerror="imgFail(this)">
+      </div>
+      <div class="about__content">
+        <p class="section-tag">Наша история</p>
+        <h2 class="section-title reveal">С 2018 года и одной эспрессо-машины</h2>
+        <p class="reveal">«Галочка» началась с крошечной точки у метро: одна машина, два бариста и вера, что хороший кофе должен быть доступен каждому. Сегодня мы обжариваем зерно сами, печём десерты в собственной кухне и помним, как любит кофе каждый постоянный гость.</p>
+        <p class="reveal">Наша миссия проста: чтобы после каждой чашки вы могли уверенно сказать — «галочка, этот кофе удался».</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Команда</p>
+        <h2 class="section-title reveal">Люди, которые делают ваш кофе</h2>
+      </div>
+      <div class="cards__grid">
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&q=80" alt="Ольга" onerror="imgFail(this)">
+          <h3>Ольга</h3><p>Шеф-бариста, чемпионка города по латте-арт</p>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1552050503-5c8bdca68e2b?w=500&q=80" alt="Андрей" onerror="imgFail(this)">
+          <h3>Андрей</h3><p>Обжарщик зерна — вкус зависит от него</p>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1583394838336-acd977736f74?w=500&q=80" alt="Наталья" onerror="imgFail(this)">
+          <h3>Наталья</h3><p>Шеф-кондитер, автор всех десертов</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Ценности</p>
+        <h2 class="section-title reveal">Во что мы верим</h2>
+      </div>
+      <div class="cards__grid">
+        <div class="value-card reveal"><span>🌱</span><h3>Свежесть</h3><p>Обжарка каждую неделю, зерно не старше 7 дней.</p></div>
+        <div class="value-card reveal"><span>🤝</span><h3>Честность</h3><p>Указываем происхождение каждого зерна и сорт.</p></div>
+        <div class="value-card reveal"><span>🥐</span><h3>Своя пекарня</h3><p>Десерты делаем сами — без консервантов.</p></div>
+        <div class="value-card reveal"><span>♻️</span><h3>Эко</h3><p>Скидка 20% за свой стакан, сортировка отходов.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= МЕНЮ ================= -->
+<main class="page" id="page-menu">
+  <section class="page-hero container">
+    <h1 class="section-title">Наше меню</h1>
+    <p class="section-sub">Все напитки готовятся на зерне нашей обжарки. Молоко на выбор: овсяное, миндальное или классическое.</p>
+  </section>
+  <section class="section pt-0">
+    <div class="container">
+      <div class="menu__filters">
+        <button class="filter-btn active" data-filter="all">Всё</button>
+        <button class="filter-btn" data-filter="coffee">Кофе</button>
+        <button class="filter-btn" data-filter="author">Авторские</button>
+        <button class="filter-btn" data-filter="dessert">Десерты</button>
+        <button class="filter-btn" data-filter="cold">Холодные</button>
+      </div>
+      <div class="menu__grid" id="menuGrid"></div>
+      <div class="promo-bar">
+        <div class="promo-bar__text">
+          <b>☕ Счастливые часы: 8:00–10:00</b>
+          <span>Любой кофе + круассан = −30%. Промокод: <code>GALOCHKA</code></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= ГАЛЕРЕЯ ================= -->
+<main class="page" id="page-gallery">
+  <section class="page-hero container">
+    <h1 class="section-title">Галерея</h1>
+    <p class="section-sub">Атмосфера изнутри. Нажмите на фото, чтобы открыть крупнее.</p>
+  </section>
+  <section class="section pt-0">
+    <div class="container"><div class="gallery__grid" id="galleryGrid"></div></div>
+  </section>
+</main>
+
+<!-- ================= БРОНЬ ================= -->
+<main class="page" id="page-booking">
+  <section class="page-hero container">
+    <h1 class="section-title">Бронирование столика</h1>
+    <p class="section-sub">Заполните форму — мы перезвоним в течение 15 минут и подтвердим бронь.</p>
+  </section>
+  <section class="section pt-0">
+    <div class="container booking__grid">
+      <div class="booking__info">
+        <div class="booking__side-img">
+          <img src="https://images.unsplash.com/photo-1524350876685-440bd5e8b0b3?w=800&q=80" alt="Столик в кофейне" onerror="imgFail(this)">
+        </div>
+        <ul class="booking__facts">
+          <li>🕐 Ежедневно с 8:00 до 22:00</li>
+          <li>🎂 Именинникам — десерт в подарок</li>
+          <li>🐕 Впускаем с питомцами</li>
+          <li>📶 Wi-Fi 300 Мбит/с и розетки у каждого столика</li>
+        </ul>
+      </div>
+      <form class="booking__form" id="bookingForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="bName">Ваше имя *</label>
+            <input type="text" id="bName" placeholder="Анна" required>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="bPhone">Телефон *</label>
+            <input type="tel" id="bPhone" placeholder="+7 (999) 123-45-67" required>
+            <span class="form-error"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="bDate">Дата *</label>
+            <input type="date" id="bDate" required>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="bTime">Время *</label>
+            <select id="bTime" required>
+              <option value="">Выберите…</option>
+              <option>10:00</option><option>11:00</option><option>12:00</option>
+              <option>13:00</option><option>14:00</option><option>15:00</option>
+              <option>16:00</option><option>17:00</option><option>18:00</option>
+              <option>19:00</option><option>20:00</option><option>21:00</option>
+            </select>
+            <span class="form-error"></span>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Количество гостей</label>
+          <div class="stepper">
+            <button type="button" id="gMinus">−</button>
+            <span id="gCount">2</span>
+            <button type="button" id="gPlus">+</button>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="bComment">Комментарий</label>
+          <textarea id="bComment" rows="3" placeholder="Столик у окна, день рождения, детский стульчик…"></textarea>
+        </div>
+        <button type="submit" class="btn btn--solid btn--wide">Забронировать</button>
+        <p class="form-success" id="bookingSuccess" hidden>✅ Заявка отправлена! Мы перезвоним в течение 15 минут.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ================= КОНТАКТЫ ================= -->
+<main class="page" id="page-contacts">
+  <section class="page-hero container">
+    <h1 class="section-title">Контакты</h1>
+    <p class="section-sub">Мы всегда рады гостям — приходите или напишите.</p>
+  </section>
+  <section class="section pt-0">
+    <div class="container contacts__grid">
+      <div class="contacts__info">
+        <div class="contact-card reveal"><b>📍 Адрес</b><p>г. Москва, ул. Кофейная, 7, вход с бульвара</p></div>
+        <div class="contact-card reveal"><b>📞 Телефон</b><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+        <div class="contact-card reveal"><b>✈️ Telegram</b><a href="#">@galochka_coffee</a></div>
+        <div class="contact-card reveal"><b>🕐 Часы работы</b><p>Пн–Вс: 8:00 — 22:00, без выходных</p></div>
+      </div>
+      <div class="contacts__map reveal">
+        <img src="https://images.unsplash.com/photo-1524350876685-440bd5e8b0b3?w=900&q=80" alt="Вид на кофейню" onerror="imgFail(this)">
+        <p class="map-note">🗺️ ул. Кофейная, 7 — замените на iframe Яндекс.Карт при желании</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Вопросы</p>
+        <h2 class="section-title reveal">Частые вопросы</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item reveal"><summary>Есть ли безглютеновые десерты?</summary><p>Да! Каждый день в витрине минимум два — спрашивайте у бариста.</p></details>
+        <details class="faq__item reveal"><summary>Можно ли работать с ноутбуком?</summary><p>Конечно. Розетки у каждого столика, Wi-Fi 300 Мбит/с, после 19:00 — «тихий режим».</p></details>
+        <details class="faq__item reveal"><summary>Есть ли доставка?</summary><p>Да, по центру города за 30–40 минут. От 800 ₽ — бесплатно.</p></details>
+        <details class="faq__item reveal"><summary>Можно ли купить зерно домой?</summary><p>Да, на развес (250 г — 1 кг) с помолом под вашу турку, фильтр или эспрессо-машину.</p></details>
+        <details class="faq__item reveal"><summary>Есть ли карта лояльности?</summary><p>Каждый 7-й кофе — бесплатно, начисления идут автоматически по номеру телефона.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<aside class="cart" id="cart">
+  <div class="cart__head">
+    <h3>Ваша корзина</h3>
+    <button class="cart__close" id="cartClose">✕</button>
+  </div>
+  <div class="cart__items" id="cartItems"></div>
+  <div class="cart__foot" id="cartFoot" hidden>
+    <div class="cart__promo">
+      <input type="text" id="promoInput" placeholder="Промокод (GALOCHKA)">
+      <button id="promoApply">ОК</button>
+    </div>
+    <p class="cart__promo-msg" id="promoMsg"></p>
+    <div class="cart__total">Итого: <span id="cartTotal">0 ₽</span></div>
+    <button class="btn btn--solid cart__order" id="orderBtn">Оформить заказ</button>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev">←</button>
+  <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext">→</button>
+  <p class="lightbox__caption" id="lightboxCaption"></p>
+</div>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <a class="logo" data-page="home">
+        <svg viewBox="0 0 40 40" width="28" height="28">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="var(--accent)" stroke-width="3"/>
+          <path d="M11 21 L17 27 L29 13" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo__text" style="font-size:17px">Галочка</span>
+      </a>
+      <p class="footer__quote">«Хороший день начинается с хорошей чашки» — девиз нашей команды с 2018 года.</p>
+    </div>
+    <div class="footer__col">
+      <b>Страницы</b>
+      <button class="link" data-page="home">Главная</button>
+      <button class="link" data-page="about">О нас</button>
+      <button class="link" data-page="menu">Меню</button>
+      <button class="link" data-page="gallery">Галерея</button>
+      <button class="link" data-page="booking">Бронь</button>
+      <button class="link" data-page="contacts">Контакты</button>
+    </div>
+    <div class="footer__col">
+      <b>Соцсети</b>
+      <a href="#">Telegram</a><a href="#">VK</a><a href="#">Дзен</a>
+    </div>
+    <div class="footer__col">
+      <b>Рассылка</b>
+      <p>Раз в неделю — секретные рецепты и новости.</p>
+      <form class="footer__subscribe" id="subscribeForm">
+        <input type="email" id="subEmail" placeholder="Ваш email">
+        <button type="submit" class="btn btn--solid">✓</button>
+      </form>
+      <p class="sub-msg" id="subMsg" hidden>Подписка оформлена! 🎉</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p>© 2026 Кофейня «Галочка». Сделано с любовью и кофеином.</p>
+      <p id="currentTime"></p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
